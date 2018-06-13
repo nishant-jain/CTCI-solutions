@@ -11,5 +11,16 @@ def remove_duplicate_char(str_list):
 	# print(('').join(str_list))
 	return ('').join(str_list)
 
+def remove_duplicate_char_extramem(str_list):
+	# O(n) complexity, takes extra space for each unique character, modifies the original list string
+	dic = dict()
+	for i in range(len(str_list)):
+		if(dic.get(str_list[i])):
+			str_list[i] = ''
+		else:
+			dic[str_list[i]] = 1
+	return ('').join(str_list)
+
 if __name__ == '__main__':
 	assert remove_duplicate_char(list('nishant')) == 'nishat'
+	assert remove_duplicate_char_extramem(list('nishant')) == 'nishat'
