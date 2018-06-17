@@ -1,6 +1,8 @@
 # Write an algorithm such that if an element in an MxN matrix is 0, its entire row and column is set to 0
 
 def row_col_0(arr):
+	# O(mn) solution with extra mem. Iterate over the original and maintain arrays for columns and rows which have 0s. 
+	# Iterate again, and mark 0 wherever row in rlist or column in clist.
 	clist = []
 	rlist = []
 	# print "input"
